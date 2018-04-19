@@ -1,0 +1,27 @@
+thead {
+  border-bottom: 1px solid #ccc;
+}
+.row {
+  padding: 8px 4px;
+}
+.row-content:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+.row-headers strong:hover {
+  cursor: pointer;
+}
+.file-type {
+  margin-left: 10px;
+}
+.filter-files-input {
+  border-radius: 11px;
+  border: 1px solid #ccc;
+  float: right;
+  padding: 4px 8px;
+}
+.glyphicon-search {
+  float: left;
+  margin-top: 1px;
+  padding: 5px;
+}

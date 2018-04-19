@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row search">
+    <div class="col-xs-12">
+      <input type="text" class="filter-files-input" name="term" [(ngModel)]="term" placeholder="Filter Files">
+    </div>
+  </div>
+  <div class="row row-headers">
+    <div class="col-xs-4"><strong (click)="sortBy('type')">Type</strong> <span *ngIf="sortedByField=='type'" class="glyphicon glyphicon-arrow-down"></span></div>
+    <div class="col-xs-4"><strong (click)="sortBy('name')">Name</strong> <span *ngIf="sortedByField=='name'" class="glyphicon glyphicon-arrow-down"></span></div>
+    <div class="col-xs-4"><strong (click)="sortBy('added')">Added</strong> <span *ngIf="sortedByField=='added'" class="glyphicon glyphicon-arrow-down"></span></div>
+  </div>
+  <div class="row row-content row-previous-directory" *ngIf="subFolder" (click)="loadRootFiles()">
+    <div class="col-xs-4">
+      <strong>...</strong>
+    </div>
+    <div class="col-xs-4"><strong>Previous Directory</strong></div>
+    <div class="col-xs-4"></div>
+  </div>
+  <div *ngFor="let file of files | filter : term">
+
+    <div class="row row-content" *ngIf="file.type=='folder'" (click)="loadSubFolderContents(file.files)">
+      <div class="col-xs-4">
+        <span class="glyphicon glyphicon-folder-open"></span>
+        <span class="file-type">folder</span>
+      </div>
+      <div class="col-xs-4">{{file.name}}</div>
+      <div class="col-xs-4">{{file.added}}</div>
+    </div>
+
+    <div class="row row-content" *ngIf="file.type!='folder'">
+      <div class="col-xs-4">
+        <span class="glyphicon glyphicon-file"></span>
+        <span class="file-type">.{{file.type}}</span>
+      </div>
+      <div class="col-xs-4">{{file.name}}</div>
+      <div class="col-xs-4">{{file.added}}</div>
+    </div>
+  </div>
+</div>
