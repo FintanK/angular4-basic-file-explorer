@@ -1,10 +1,12 @@
 # Peninsula File Explorer
 
-A file explorer component which consumes a static JSON file and allow navigation of folders.
+A file explorer component which consumes a static JSON file and allows the navigation of files and folders.
 
 # Dependencies
 
 Ensure you have Node.js and NPM installed.
+
+I used Node v9.11.1 and NPM v5.6.0.
 
 # Installation
 
@@ -20,12 +22,18 @@ npm install
 npm start
 ````
 
-# Unit Tests
-
-```
-npm run test
-```
-
 You will then be able to view the project in your browser by navigating to
 
 http://localhost:4200
+
+# Unit Tests
+
+```
+karma start karma.conf.js
+```
+
+# E2E Tests
+
+```
+npm run e2e
+```
